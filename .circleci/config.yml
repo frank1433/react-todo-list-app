@@ -1,7 +1,7 @@
 # @Author: frank zhang
 # @Date:   2022-08-27 15:21:10
 # @Last Modified by:   frank zhang
-# @Last Modified time: 2022-08-27 16:05:20
+# @Last Modified time: 2022-08-27 16:08:02
 version: 2.1
 orbs:
   node: circleci/node@3.0.0
@@ -35,8 +35,8 @@ jobs:
 
       - run: npm run test:coverage
 
-      - codecov/upload:
-          file: './coverage/clover.xml'
+      # - codecov/upload:
+      #     file: './coverage/clover.xml'
 
       - run: npm run build
 
