@@ -1,11 +1,11 @@
 # @Author: frank zhang
 # @Date:   2022-08-27 15:21:10
 # @Last Modified by:   frank zhang
-# @Last Modified time: 2022-08-27 16:08:02
+# @Last Modified time: 2022-08-27 16:52:35
 version: 2.1
 orbs:
   node: circleci/node@3.0.0
-  # codecov: codecov/codecov@1.0.2
+  codecov: codecov/codecov@1.0.2
 jobs:
   build:
     docker:
@@ -35,9 +35,9 @@ jobs:
 
       - run: npm run test:coverage
 
-      # - codecov/upload:
-      #     file: './coverage/clover.xml'
+      - codecov/upload:
+          file: './coverage/clover.xml'
 
       - run: npm run build
 
-      - run: npm run netlify:deploy
+      # - run: npm run netlify:deploy
